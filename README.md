@@ -5,3 +5,5 @@ Spring Cloud微服务实战的代码练习
 页面显示注册中心页面。
 
 2.server-provide：服务提供者，注册到注册中心里。
+
+3.高可用的注册中心：eureka-server-peer1、eureka-server-peer2
