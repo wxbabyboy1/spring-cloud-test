@@ -16,17 +16,21 @@
         <java.version>1.8</java.version>
     </properties>
 
-    <artifactId>ribbon-consumer</artifactId>
+    <artifactId>consumer-hystrix</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
-        <!-- ribbon服务消费 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-ribbon</artifactId>
+        </dependency>
+        <!-- 断路器 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
         </dependency>
         <!-- 解决这个异常：java.lang.TypeNotPresentException: Type javax.xml.bind.JAXBContext not present start -->
         <dependency>

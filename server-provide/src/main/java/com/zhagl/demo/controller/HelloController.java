@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Random;
+
 @RestController
 public class HelloController {
 
@@ -35,4 +37,14 @@ public class HelloController {
         user.name = name;
         return user;
     }*/
+
+    @RequestMapping(value = "/hello-hystrix", method = RequestMethod.GET)
+    public String indexHystrix() throws InterruptedException {
+        ServiceInstance instance = client.getLocalServiceInstance();
+        //让处理线程等待几秒钟
+        int sleepTime = new Random().nextInt(3000);//由于服务默认有超时时间，所以这样可以模拟服务未响应
+        System.out.println(sleepTime);
+        Thread.sleep(sleepTime);
+        return "Hello World!host:" + instance.getHost() + ",service_id:"+instance.getServiceId();
+    }
 }

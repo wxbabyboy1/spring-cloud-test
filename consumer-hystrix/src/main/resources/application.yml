@@ -1,0 +1,12 @@
+spring:
+  application:
+    #服务名
+    name : hystrix-consumer
+server:
+  port: 9000
+eureka:
+  client:
+    serviceUrl:
+      #指明注册中心
+      defaultZone  : http://localhost:1111/eureka/
+

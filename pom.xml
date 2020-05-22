@@ -9,6 +9,7 @@
         <module>eureka-server-peer1</module>
         <module>eureka-server-peer2</module>
         <module>ribbon-consumer</module>
+        <module>consumer-hystrix</module>
     </modules>
 
 	<groupId>com.zhagl</groupId>

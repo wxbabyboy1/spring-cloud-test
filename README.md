@@ -16,3 +16,4 @@ Spring Cloud微服务实战的代码练习
 页面访问页面输入http://localhost:9000/ribbon-consumer
 来消费HELLO-SERVICE这个服务。
 
+5.断路器hystrix
