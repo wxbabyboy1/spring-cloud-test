@@ -1,6 +1,5 @@
 package com.zhagl.demo.controller;
 
-import com.zhagl.demo.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
