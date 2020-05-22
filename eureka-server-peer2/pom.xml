@@ -16,7 +16,7 @@
         <java.version>1.8</java.version>
     </properties>
 
-    <artifactId>eureka-server-peer1</artifactId>
+    <artifactId>eureka-server-peer2</artifactId>
 
     <dependencies>
         <dependency>

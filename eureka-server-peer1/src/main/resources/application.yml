@@ -1,0 +1,15 @@
+server:
+    port : 1111
+
+eureka:
+  instance:
+    hostname : peer1
+  client:
+    #自己是注册中心，下面不注册自己，选择false
+    registerWithEureka : false
+    #自己是注册中心，下面就不遍历注册了，选择false
+    fetchRegistry : false
+    serviceUrl:
+      #defaultZone，指定访问地址
+      defaultZone: http://peer2:1112/eureka/
+
