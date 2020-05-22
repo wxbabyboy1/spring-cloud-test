@@ -8,3 +8,8 @@
 3）这个项目的ribbon来消费这个HELLO-SERVICE
 5.可以在ribbon-consumer的控制台，看到 c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client HELLO-SERVICE initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=HELLO-SERVICE,current list of Servers=[ZhaGuolong-PC:8081, ZhaGuolong-PC:8082]
 这是输出了HELLO-SERVICE的服务列表情况，Ribbon按照此信息进行轮询。
+
+额外：
+1.restTemplate.getForEntity方法，我写了几种，可参见ConsumerController.class
+2.restTemplate.postForEntity方法，可参见ConsumerController.class
+3.类似的还有restTemplate.postForLocation方法，restTemplate.put方法，restTemplate.delete方法
