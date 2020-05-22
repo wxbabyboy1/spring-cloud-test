@@ -12,3 +12,7 @@ Spring Cloud微服务实战的代码练习
 如果关闭RegisterPeer1Application，http://peer2:1112还在，关闭RegisterPeer2Application，http://peer1:1111还在。
 以及同一个提供者多个端口注册，详情看eureka-server-peer1、eureka-server-peer2的README.md
 
+4.ribbon消费：ribbon-consumer。一定要保证高可用注册中心peer1、peer2启动，服务提供者java -jar启动两个端口，启动类，
+页面访问页面输入http://localhost:9000/ribbon-consumer
+来消费HELLO-SERVICE这个服务。
+
