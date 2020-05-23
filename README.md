@@ -17,3 +17,6 @@ Spring Cloud微服务实战的代码练习
 来消费HELLO-SERVICE这个服务。
 
 5.断路器hystrix
+
+6.feign整合了ribbon和hystrix，还提供了一种声明式的web服务客户端定义方式。
+基于Netlfix Feign实现。

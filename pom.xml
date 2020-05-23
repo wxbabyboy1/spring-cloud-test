@@ -10,6 +10,7 @@
         <module>eureka-server-peer2</module>
         <module>ribbon-consumer</module>
         <module>consumer-hystrix</module>
+        <module>feign-consumer</module>
     </modules>
 
 	<groupId>com.zhagl</groupId>

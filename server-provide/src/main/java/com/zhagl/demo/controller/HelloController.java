@@ -3,6 +3,7 @@ package com.zhagl.demo.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +23,7 @@ public class HelloController {
     }
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public String user(String name, Integer age){
+    public String user(@RequestHeader("name") String name, @RequestHeader("age") Integer age){
         return "name:"+name+",age:"+age;
     }
 
@@ -37,6 +38,11 @@ public class HelloController {
         user.name = name;
         return user;
     }*/
+
+    @RequestMapping(value = "/postUser", method = RequestMethod.POST)
+    public String postUser(@RequestHeader("name") String name, @RequestHeader("age") Integer age){
+        return "name:"+name+",age:"+age;
+    }
 
     @RequestMapping(value = "/hello-hystrix", method = RequestMethod.GET)
     public String indexHystrix() throws InterruptedException {
