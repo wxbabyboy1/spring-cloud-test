@@ -11,7 +11,10 @@
         <module>ribbon-consumer</module>
         <module>consumer-hystrix</module>
         <module>feign-consumer</module>
-    </modules>
+        <module>feign-hello-service-api</module>
+        <module>feign-hello-service-provide</module>
+		<module>feign-hello-service-consumer</module>
+	</modules>
 
 	<groupId>com.zhagl</groupId>
 	<artifactId>demo</artifactId>
