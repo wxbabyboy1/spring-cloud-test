@@ -14,7 +14,7 @@
         <module>feign-hello-service-api</module>
         <module>feign-hello-service-provide</module>
 		<module>feign-hello-service-consumer</module>
-	</modules>
+    </modules>
 
 	<groupId>com.zhagl</groupId>
 	<artifactId>demo</artifactId>

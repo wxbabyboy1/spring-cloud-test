@@ -9,4 +9,21 @@ eureka:
     serviceUrl:
       #指明注册中心
       defaultZone  : http://localhost:1111/eureka/
-
+#设置全局的ribbon超时
+ribbon:
+  ConnectTimeOut : 500
+  ReadTimeout: 1000
+#指定服务设置对应的ribbon参数
+HELLO-SERVICE:
+  ribbon:
+    ConnectTimeOut : 500
+    ReadTimeout: 1000
+    OkToRetryOnAllOperations: true
+    #重试策略先尝试访问首选实例一次，失败后才更换实例访问
+    MaxAutoRetries: 1
+    #重试失败后，尝试更换两次实例进行重试
+    MaxAutoRetriesNextServer: 2
+#默认服务降级是关闭的，打开
+feign:
+  hystrix:
+    enabled: false

@@ -19,6 +19,7 @@ public class ConsumerController {
         sb.append(refactorHelloService.hello("MINI")).append("\n");
         sb.append(refactorHelloService.hello("haha", 20)).append("\n");
         sb.append(refactorHelloService.hello(new User("uuuu", 18))).append("\n");
+        sb.append(refactorHelloService.hello()).append("\n");
         return sb.toString();
     }
 
