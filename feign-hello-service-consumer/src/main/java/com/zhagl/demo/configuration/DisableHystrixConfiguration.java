@@ -1,4 +1,3 @@
-/*
 package com.zhagl.demo.configuration;
 
 import feign.Feign;
@@ -8,7 +7,7 @@ import org.springframework.context.annotation.Scope;
 
 //构建一个关闭hystrix的配置类
 @Configuration
-public class DisableHystrixConofiguration {
+public class DisableHystrixConfiguration {
 
     @Bean
     @Scope("prototype")
@@ -16,4 +15,3 @@ public class DisableHystrixConofiguration {
         return Feign.builder();
     }
 }
-*/

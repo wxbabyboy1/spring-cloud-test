@@ -23,7 +23,7 @@ HELLO-SERVICE:
     MaxAutoRetries: 1
     #重试失败后，尝试更换两次实例进行重试
     MaxAutoRetriesNextServer: 2
-#默认服务降级是关闭的，打开
+#默认服务降级是关闭的，打开，这里是全局配置，如果想禁用指定服务的熔断，需要定义DisableHystrixConfiguration类，并在接口中指明configuration配置
 feign:
   hystrix:
-    enabled: false
+    enabled: true
