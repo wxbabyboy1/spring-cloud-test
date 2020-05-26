@@ -27,3 +27,7 @@ HELLO-SERVICE:
 feign:
   hystrix:
     enabled: true
+#开启日志，主要是logging.level.包名.服务类名=DEBUG
+logging:
+  level:
+    com.zhagl.demo.service.HelloService: DEBUG

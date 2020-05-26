@@ -15,3 +15,4 @@ api定义接口和对象，provide服务提供者（实现接口），consumer�
 注意：
    （1）默认降级是关闭的feign.hystrix.enabled要设置为true。
    （2）api的HelloService接口，上面不能有RequestMapping注解，不然会出现错误：Ambiguous mapping. Cannot map xxx method.
+5）开启日志，主要是logging.level.包名.服务类名=DEBUG。有两种：全局、接口指定configuration。
