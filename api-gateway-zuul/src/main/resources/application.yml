@@ -1,0 +1,7 @@
+spring:
+  application:
+    #服务名
+    name : api-gateway
+server:
+  port: 5555
+

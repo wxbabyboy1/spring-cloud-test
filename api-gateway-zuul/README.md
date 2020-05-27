@@ -1,0 +1,2 @@
+zuul配置：
+1.启动类加入EnableZuulProxy、SpringCloudApplication注解
