@@ -27,6 +27,18 @@ http://localhost:5555/hello-service/hello4?name=1
 发现直接转发了。因为默认情况下，注册中心上的所有服务都被创建了默认路由。
 如果要禁止这种默认路由，需要设置zuul.ignored-services=hello-service，
 此时刷新页面，发现无法转发了（因为设置了zuul.ignored-services，等号右边可以为*,那代表禁止所有默认路由）。
-
-
-
+3.自定义路由映射规则
+启动类自定义PatternServiceRouteMapper的构造方法（我没试验）
+4.路径匹配，比如/user-service/**和/user-service/ext/**，
+有可能/user-service/ext/hello会被/user-service/**匹配到，因为application.properties无法保证有序，
+所以要用application.yml来保证有序的路由规则。
+5.忽略表达式：
+配置：zuul.routes.ignored-patterns=/**/hello7/**
+此时访问下面：
+http://localhost:5555/api-b/hello7?accessToken=token
+就会无法路由到了。后台日志打出：No route found for uri: /api-b/hello7
+6.路由前缀：（书中提到不同版本可能存在一些bug，我没实现）
+7.forward本地跳转：
+zuul.routes.url=forward:/tt
+其中tt是本地方法，页面访问http://localhost:5555/api-d/tt?accessToken=token可以跳转到本地，
+但是我。。。没试验出来。。。

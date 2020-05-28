@@ -23,9 +23,15 @@ zuul:
           path: /api-c/**
           #将访问路径path转发到服务上
           service-id: feign-consumer
+      api-d-url:
+          #访问路径path
+          path: /api-d/**
+          #将访问路径path本地跳转到api-a-url上
+          url: forward:/tt
   #不创建默认路由配置
   ignored-services: hello-service
-
+  #指定接口不被路由
+  ignored-patterns: /**/hello7/**
 eureka:
   client:
     serviceUrl:
