@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Bean;
 @SpringCloudApplication
 public class ZuulApplication {
 
-	/*@Bean
+	@Bean
 	public AccessFilter accessFilter(){
 		return new AccessFilter();
-	}*/
+	}
 
 	public static void main(String[] args) {
 		new SpringApplicationBuilder(ZuulApplication.class).web(true).run(args);
