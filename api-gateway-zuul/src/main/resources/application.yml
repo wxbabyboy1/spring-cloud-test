@@ -5,3 +5,26 @@ spring:
 server:
   port: 5555
 
+zuul:
+  routes:
+      api-a-url:
+          #访问路径path
+          path: /api-a-url/**
+          #将访问路径path转发到url上
+          url: http://localhost:9001
+      api-b-url:
+          #访问路径path
+          path: /api-b/**
+          #将访问路径path转发到服务上
+          service-id: hello-service
+      api-c-url:
+          #访问路径path
+          path: /api-c/**
+          #将访问路径path转发到服务上
+          service-id: feign-consumer
+
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone，指定访问地址
+      defaultZone: http://localhost:1111/eureka/

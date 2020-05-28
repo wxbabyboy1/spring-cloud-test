@@ -1,2 +1,12 @@
-zuul配置：
+zuul转发配置：
 1.启动类加入EnableZuulProxy、SpringCloudApplication注解
+2.pom加入spring-cloud-starter-zuul
+3.配置文件指明访问路径path和转发url，
+页面访问：http://localhost:5555/api-a-url/feign-consumer3，转发到http://localhost:5555/api-a-url/feign-consumer3
+4.pom加入spring-cloud-starter-eureka，配置加上api-b、api-c，以及eureka配置
+一定要保证高可用注册中心peer1、peer2启动，feign-hello-service-provide服务提供者启动类，feign-hello-service-consumer消费类启动
+注册中心有hello-service、feign-consumer、api-gateway
+页面访问页面输入：
+http://localhost:5555/api-b/hello4?name=1
+http://localhost:5555/api-c/feign-consumer3
+可以发现服务被转发了。
