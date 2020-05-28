@@ -32,3 +32,8 @@ api定义接口和对象，provide服务提供者（实现接口），consumer�
 以及全局默认服务降级配置，如果想禁用指定服务的熔断，需要定义DisableHystrixConfiguration类，
 并在接口中指明configuration配置(在feign-hello-service-consumer项目里全局配置)
 5）设置日志，参考feign-consumer项目，开启日志，主要是logging.level.包名.服务类名=DEBUG。有两种：全局、接口指定configuration。
+
+7.zuul网关：api-gateway-zuul。
+1）转发
+2）过滤（自定义过滤）
+3) 默认路由

@@ -17,11 +17,14 @@ zuul:
           path: /api-b/**
           #将访问路径path转发到服务上
           service-id: hello-service
+      #zuul.routes.api-c-url.path和zuul.routes.api-c-url.serviceId等同于zuul.routes.feign-consumer=/api-c/**
       api-c-url:
           #访问路径path
           path: /api-c/**
           #将访问路径path转发到服务上
           service-id: feign-consumer
+  #不创建默认路由配置
+  ignored-services: hello-service
 
 eureka:
   client:
