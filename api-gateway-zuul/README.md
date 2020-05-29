@@ -40,5 +40,4 @@ http://localhost:5555/api-b/hello7?accessToken=token
 6.路由前缀：（书中提到不同版本可能存在一些bug，我没实现）
 7.forward本地跳转：
 zuul.routes.url=forward:/tt
-其中tt是本地方法，页面访问http://localhost:5555/api-d/tt?accessToken=token可以跳转到本地，
-但是我。。。没试验出来。。。
+其中tt是本地方法，页面访问http://localhost:5555/api-d-url?a=18可以跳转到本地(连自定义过滤器都没走)

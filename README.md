@@ -41,4 +41,4 @@ api定义接口和对象，provide服务提供者（实现接口），consumer�
 路径匹配
 忽略表达式
 路由前缀（不同版本可能存在一些bug）
-forward本地跳转（我没试验出来。。。）
+forward本地跳转

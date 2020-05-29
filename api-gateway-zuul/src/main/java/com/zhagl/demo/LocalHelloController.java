@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class LocalHelloController {
 
     @RequestMapping(value = "/tt", method = RequestMethod.GET)
-    public String tt(){
-        return "Hello World Local";
+    public String tt(Integer a){
+        return "Hello World Local, forward:" + a;
     }
 }
