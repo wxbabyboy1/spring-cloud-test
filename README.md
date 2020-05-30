@@ -42,3 +42,4 @@ api定义接口和对象，provide服务提供者（实现接口），consumer�
 忽略表达式
 路由前缀（不同版本可能存在一些bug）
 forward本地跳转
+过滤器的执行周期pre、routing、post、以及三者报错的时候都会进入的error

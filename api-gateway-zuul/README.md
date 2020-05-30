@@ -4,7 +4,7 @@ zuul转发配置：
 3.配置文件指明访问路径path和转发url，
 页面访问：http://localhost:5555/api-a-url/feign-consumer3，转发到http://localhost:5555/api-a-url/feign-consumer3
 4.pom加入spring-cloud-starter-eureka，配置加上api-b、api-c，以及eureka配置
-一定要保证高可用注册中心peer1、peer2启动，feign-hello-service-provide服务提供者启动类，feign-hello-service-consumer消费类启动
+一定要保证高可用注册中心peer1、peer2启动，feign-hello-service-provide服务提供者启动类，feign-hello-service-consumer消费类启动，zuul启动类启动
 注册中心有hello-service、feign-consumer、api-gateway
 页面访问页面输入：
 http://localhost:5555/api-b/hello4?name=1
@@ -41,3 +41,4 @@ http://localhost:5555/api-b/hello7?accessToken=token
 7.forward本地跳转：
 zuul.routes.url=forward:/tt
 其中tt是本地方法，页面访问http://localhost:5555/api-d-url?a=18可以跳转到本地(连自定义过滤器都没走)
+8.过滤器的执行周期pre、routing、post、以及三者报错的时候都会进入的error。自定义了一个ThrowExceptionFilter模拟error

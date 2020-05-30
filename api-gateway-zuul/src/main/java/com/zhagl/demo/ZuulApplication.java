@@ -1,6 +1,7 @@
 package com.zhagl.demo;
 
 import com.zhagl.demo.filter.AccessFilter;
+import com.zhagl.demo.filter.ThrowExceptionFilter;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
@@ -15,6 +16,11 @@ public class ZuulApplication {
 	public AccessFilter accessFilter(){
 		return new AccessFilter();
 	}
+
+	/*@Bean
+	public ThrowExceptionFilter exceptionFilter(){
+		return new ThrowExceptionFilter();
+	}*/
 
 	/*@Bean
 	public PatternServiceRouteMapper serviceRouteMapper(){

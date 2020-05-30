@@ -7,9 +7,9 @@ import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class AccessFilter extends ZuulFilter {
+public class ThrowExceptionFilter extends ZuulFilter {
 
-    private static Logger logger = LoggerFactory.getLogger(AccessFilter.class);
+    private static Logger logger = LoggerFactory.getLogger(ThrowExceptionFilter.class);
 
     @Override
     public String filterType() {
@@ -36,19 +36,12 @@ public class AccessFilter extends ZuulFilter {
 
     @Override
     public Object run() {//过滤器的具体逻辑
-        RequestContext ctx = RequestContext.getCurrentContext();
-        HttpServletRequest request = ctx.getRequest();
-
-        logger.info("send {} request to {}", request.getMethod(), request.getRequestURL().toString());
-
-        Object accessToken = request.getParameter("accessToken");//请求参数
-        if(accessToken == null){
-            logger.warn("access token is empty");
-            ctx.setSendZuulResponse(false);//过滤该请求，不对其进行路由。
-            ctx.setResponseStatusCode(401);//设置其返回的错误码
-            return null;
-        }
-        logger.info("access token ok");
+        logger.info("This is a pre filter, it will throw RuntimeException");
+        doSomething();
         return null;
+    }
+
+    private void doSomething() {
+        throw new RuntimeException("Exists some errors");
     }
 }
