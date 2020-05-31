@@ -41,4 +41,35 @@ http://localhost:5555/api-b/hello7?accessToken=token
 7.forward本地跳转：
 zuul.routes.url=forward:/tt
 其中tt是本地方法，页面访问http://localhost:5555/api-d-url?a=18可以跳转到本地(连自定义过滤器都没走)
-8.过滤器的执行周期pre、routing、post、以及三者报错的时候都会进入的error。自定义了一个ThrowExceptionFilter模拟error
+8.过滤器的执行周期pre、routing、post、以及三者报错的时候都会进入的error。
+自定义了一个ThrowExceptionFilter模拟error。
+自定义ErrorFilter，将ThrowExceptionFilter的错误捕获。
+9.捕获异常有两种，一种是try-catch，一种是error过滤器。对于pre、route、post来说，
+是这么处理的:
+如果是post，那ErrorFilter里error.*参数就不会被SendErrorFilter来处理。
+因为SendErrorFilter里有error.*参数。
+try{
+    preRoute();
+} catch(ZuulException e){
+    error(e);
+    postRoute();
+    return;
+}
+try{
+    route();
+} catch(ZuulException e){
+    error(e);
+    postRoute();
+    return;
+}
+try{
+    postRoute();
+} catch(ZuulException e){
+    error(e);
+    return;
+}
+所以要解决post后error.*参数不会被SendErrorFilter来处理的问题：
+定义了ErrorExtFilter（这里有component注解）和DidiFilterProcessor，前者是将上下文中存储的异常实例读取并判断是否来自post，
+后者是继承核心处理类将异常实例存储，被前者来读取。
+并且要在启动类中加入FilterProcessor.setProcessor(new DidiFilterProcessor());
+配合ThrowExceptionFilter类中设置post来测试。

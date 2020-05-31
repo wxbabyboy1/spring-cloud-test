@@ -1,6 +1,9 @@
 package com.zhagl.demo;
 
+import com.netflix.zuul.FilterProcessor;
 import com.zhagl.demo.filter.AccessFilter;
+import com.zhagl.demo.filter.ErrorExtFilter;
+import com.zhagl.demo.filter.ErrorFilter;
 import com.zhagl.demo.filter.ThrowExceptionFilter;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.SpringCloudApplication;
@@ -17,10 +20,15 @@ public class ZuulApplication {
 		return new AccessFilter();
 	}
 
-	/*@Bean
+	@Bean
 	public ThrowExceptionFilter exceptionFilter(){
 		return new ThrowExceptionFilter();
-	}*/
+	}
+
+	@Bean
+	public ErrorFilter errorFilter(){
+		return new ErrorFilter();
+	}
 
 	/*@Bean
 	public PatternServiceRouteMapper serviceRouteMapper(){
@@ -31,6 +39,7 @@ public class ZuulApplication {
 	}*/
 
 	public static void main(String[] args) {
+		FilterProcessor.setProcessor(new DidiFilterProcessor());
 		new SpringApplicationBuilder(ZuulApplication.class).web(true).run(args);
 	}
 
