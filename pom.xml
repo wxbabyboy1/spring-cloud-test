@@ -15,6 +15,7 @@
         <module>feign-hello-service-provide</module>
 		<module>feign-hello-service-consumer</module>
         <module>api-gateway-zuul</module>
+        <module>config-server</module>
     </modules>
 
 	<groupId>com.zhagl</groupId>
