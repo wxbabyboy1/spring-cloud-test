@@ -1,3 +1,4 @@
+config-server服务端，在git上建立仓库。然后本地服务端启动，浏览器可以访问到
 1.pom引入依赖：spring-cloud-config-server
 2.启动类加入注解EnableConfigServer
 3.git上建立仓库（我创建了spring-cloud-test-config-server作为仓库），并配置不同类型的文件，比如didispace-dev.properties等。
