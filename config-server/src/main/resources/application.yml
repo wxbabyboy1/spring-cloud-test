@@ -12,7 +12,7 @@ spring:
           #uri: https://github.com/wxbabyboy1/spring-cloud-test-config-server
           #这是本地的git仓库，我找的是这个本地git项目。windows多个/，linux没有多个/
           #uri: file:///D:/workspace/spring-cloud-test
-          #配置文件所在根目录
+          #子目录路径
           search-paths: spring_cloud_in_action/config-repo
           #这是本地对应的那个根目录
           #search-paths: config-server/config-repo
@@ -20,6 +20,19 @@ spring:
           username: wxbabyboy1
           #密码
           password: mscommand12345
-
+          #多仓库
+          repos:
+            #自定义名称
+            feifei:
+              pattern: feifei*/qas*,*feifei*/qas*
+              uri: https://github.com/wxbabyboy1/spring-cloud-test
+              #子目录路径
+              search-paths: config-server/config-repo
+            #自定义名称
+            mengmeng:
+              pattern: mengmeng*/dev*,*mengmeng*/dev*
+              uri: https://github.com/wxbabyboy1/spring-cloud-test
+              #子目录路径
+              search-paths: config-server/config-repo2
 server:
   port: 7001

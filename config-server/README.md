@@ -32,3 +32,4 @@ uri要加上(一定要是git仓库，带有.git的)file:
 我在这里弄了个feifei-qas.yml
 访问浏览器：http://localhost:7001/feifei/qas
 成功。
+7.多仓库
