@@ -26,3 +26,9 @@ http://localhost:7001/config-label-test/didispace-prod.properties
 在本地暂存，可以有效防止当git仓库出现故障而引起无法加载配置信息的情况。
 我们可以通过断开网络，再起发起http://localhost:7001/didispace/prod/config-label-test请求，
 虽然控制台提示无法从远处获取，但依然会返回配置信息（本地）
+6.访问本地的git仓库测试：
+uri要加上(一定要是git仓库，带有.git的)file:
+指明根目录search-paths
+我在这里弄了个feifei-qas.yml
+访问浏览器：http://localhost:7001/feifei/qas
+成功。
