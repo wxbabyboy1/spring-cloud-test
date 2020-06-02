@@ -43,3 +43,7 @@ api定义接口和对象，provide服务提供者（实现接口），consumer�
 路由前缀（不同版本可能存在一些bug）
 forward本地跳转
 过滤器的执行周期pre、routing、post、以及三者报错的时候都会进入的error
+
+8.分布式配置中心spring-cloud-config：config-server、config-client
+1）config-server服务端，在git上建立仓库。然后本地服务端启动，浏览器可以访问到
+2）config-client客户端，调用config-server服务端读取远处git仓库的配置文件

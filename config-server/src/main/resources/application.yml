@@ -1,0 +1,18 @@
+spring:
+  application:
+    #服务名
+    name : config-server
+  cloud:
+    config:
+      server:
+        git:
+          #配置文件所在仓库
+          uri: https://github.com/wxbabyboy1/spring-cloud-test-config-server.git
+          #配置文件所在根目录
+          search-paths: spring_cloud_in_action/config-repo
+          #账号
+          username: wxbabyboy1
+          #密码
+          password: mscommand12345
+server:
+  port: 7001
