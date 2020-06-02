@@ -36,3 +36,8 @@ uri要加上(一定要是git仓库，带有.git的)file:
 8.svn仓库，（我觉得用不到了。。）
 9.开启本地资源，不使用git或svn，需要配置spring.profiles.active=native
 和spring.cloud.config.server.native.searchLocations指定（我试过不用classpath，不生效）
+10.健康监控：配置好了Git或SVN之后，为了能确保能连通仓库，我们需要为其实现健康监测功能，来判断Git或SVN仓库是否可以访问
+访问：http://localhost:7001/health
+返回：up
+如果我们无法连接到配置仓库的uri那么status就会变成DOWN
+如果不想使用这个健康检测器，也可以通过使用spring.cloud.config.server.health.enabled=false来禁用它。
