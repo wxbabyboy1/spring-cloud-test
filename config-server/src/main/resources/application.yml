@@ -46,3 +46,7 @@ spring:
           from: aa34
 server:
   port: 7001
+security:
+  user:
+    name: user
+    password: xxxx

@@ -6,3 +6,6 @@ config-client客户端，调用config-server服务端读取远处git仓库的配
 4.启动config-server、config-client的启动类
 访问http://localhost:7002/from
 可以修改bootstrap.properties，读取不同配置
+5.安全防护
+在config-client里设置spring.cloud.config.username和spring.cloud.config.password
+如果错误，页面访问401错误

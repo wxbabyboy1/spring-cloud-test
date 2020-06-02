@@ -45,3 +45,7 @@ uri要加上(一定要是git仓库，带有.git的)file:
 比如访问：
 http://localhost:7001/config-label-test/didispace-qas.yml
 from就被覆盖成aa34了。
+12.安全防护：
+加入依赖spring-boot-starter-security
+设置security.user.name,security.user.password。
+同时在config-client里设置spring.cloud.config.username和spring.cloud.config.password
