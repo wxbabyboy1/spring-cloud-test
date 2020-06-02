@@ -2,6 +2,9 @@ spring:
   application:
     #服务名
     name : config-server
+  #开启本地，使用本地配置的资源文件
+  profiles:
+    active: native
   cloud:
     config:
       server:
@@ -34,5 +37,8 @@ spring:
               uri: https://github.com/wxbabyboy1/spring-cloud-test
               #子目录路径
               search-paths: config-server/config-repo2
+        #不使用git或者svn，使用本地配置的资源文件
+        native:
+          search-locations: classpath:/config-repo3
 server:
   port: 7001

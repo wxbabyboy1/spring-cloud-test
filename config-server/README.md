@@ -33,3 +33,6 @@ uri要加上(一定要是git仓库，带有.git的)file:
 访问浏览器：http://localhost:7001/feifei/qas
 成功。
 7.多仓库
+8.svn仓库，（我觉得用不到了。。）
+9.开启本地资源，不使用git或svn，需要配置spring.profiles.active=native
+和spring.cloud.config.server.native.searchLocations指定（我试过不用classpath，不生效）
