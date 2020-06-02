@@ -41,3 +41,7 @@ uri要加上(一定要是git仓库，带有.git的)file:
 返回：up
 如果我们无法连接到配置仓库的uri那么status就会变成DOWN
 如果不想使用这个健康检测器，也可以通过使用spring.cloud.config.server.health.enabled=false来禁用它。
+11.属性覆盖：spring.cloud.config.server.overrides
+比如访问：
+http://localhost:7001/config-label-test/didispace-qas.yml
+from就被覆盖成aa34了。

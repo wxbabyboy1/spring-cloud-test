@@ -40,5 +40,9 @@ spring:
         #不使用git或者svn，使用本地配置的资源文件
         native:
           search-locations: classpath:/config-repo3
+        #属性覆盖
+        overrides:
+          foo: bar
+          from: aa34
 server:
   port: 7001
