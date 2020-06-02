@@ -1,0 +1,14 @@
+#指明服务治理的地址
+eureka:
+  client:
+    serviceUrl:
+      defaultZone:  http://localhost:1111/eureka/
+
+spring:
+  cloud:
+    config:
+      discovery:
+        #开启服务访问config-server的enabled为true
+        enabled:  true
+        #指定服务访问config-server的服务名
+        serviceId:  config-server

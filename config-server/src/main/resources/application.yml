@@ -50,3 +50,9 @@ security:
   user:
     name: user
     password: xxxx
+#治理中心：
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone，指定访问地址
+      defaultZone: http://localhost:1111/eureka/
