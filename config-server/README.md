@@ -49,3 +49,8 @@ from就被覆盖成aa34了。
 加入依赖spring-boot-starter-security
 设置security.user.name,security.user.password。
 同时在config-client里设置spring.cloud.config.username和spring.cloud.config.password
+13.加密解密：（以后再看吧）
+在配置文件中会有很多敏感信息，比如数据库密码等，
+这些信息如果以明文存储和传输是很危险的，为解决这个问题，
+Config提供了对属性加密解密的功能，只需要在敏感信息的值加密后加上前缀{cipher}，
+这主要是为了防止密文被用作密码并意外泄露。
