@@ -9,3 +9,11 @@ config-client客户端，调用config-server服务端读取远处git仓库的配
 5.安全防护
 在config-client里设置spring.cloud.config.username和spring.cloud.config.password
 如果错误，页面访问401错误
+6.失败快速响应spring.cloud.config.fail-fast，默认false，
+如果只启动client不启动service，报错很多。true报错就减少
+spring.cloud.config.fail-fast=true
+7.自动重试
+确保failFast=true
+加入依赖spring-retry、spring-boot-starter-aop
+不需要再做任何配置，启动客户端主类，连接config-server失败后会继续尝试，直到第6次失败，才返回错误信息。
+重试时打印：.ConfigServicePropertySourceLocator : Fetching config from server at: http://localhost:7001/
