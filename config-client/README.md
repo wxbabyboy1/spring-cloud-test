@@ -17,3 +17,12 @@ spring.cloud.config.fail-fast=true
 加入依赖spring-retry、spring-boot-starter-aop
 不需要再做任何配置，启动客户端主类，连接config-server失败后会继续尝试，直到第6次失败，才返回错误信息。
 重试时打印：.ConfigServicePropertySourceLocator : Fetching config from server at: http://localhost:7001/
+8.动态刷新
+加入依赖spring-boot-starter-actuator
+启动config-server、config-client的启动类
+访问http://localhost:7002/from，可以看到当前配置，修改仓库的值，
+再访问http://localhost:7002/from，值没有改变。
+通过post请求发送到http://localhost:7002/refresh，可以看到更新了！
+再访问http://localhost:7002/from，值已经改变。
+当系统发展壮大后，维护这样的刷新清单会成为非常大的负担，很容易犯错，
+后续有spring cloud bus来实现以消息总线的方式进行配置变更的通知，并完成集群上的批量配置更新。
