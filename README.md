@@ -47,3 +47,6 @@ forward本地跳转
 8.分布式配置中心spring-cloud-config：config-server、config-client
 1）config-server服务端，在git上建立仓库。然后本地服务端启动，浏览器可以访问到
 2）config-client客户端，调用config-server服务端读取远处git仓库的配置文件
+
+9.消息总线rabbitmq-hello
+1）简单的快速发送、接收消息例子

@@ -1,10 +1,12 @@
 package com.zhagl.demo;
 
 import com.netflix.zuul.FilterProcessor;
+import com.zhagl.demo.configuration.DidiErrorAttributes;
 import com.zhagl.demo.filter.AccessFilter;
 import com.zhagl.demo.filter.ErrorExtFilter;
 import com.zhagl.demo.filter.ErrorFilter;
 import com.zhagl.demo.filter.ThrowExceptionFilter;
+import org.springframework.boot.autoconfigure.web.DefaultErrorAttributes;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
@@ -30,6 +32,11 @@ public class ZuulApplication {
 		return new ErrorFilter();
 	}
 
+	@Bean
+	public DefaultErrorAttributes errorAttributes(){
+		return new DidiErrorAttributes();
+	}
+
 	/*@Bean
 	public PatternServiceRouteMapper serviceRouteMapper(){
 		return new PatternServiceRouteMapper(
@@ -39,7 +46,7 @@ public class ZuulApplication {
 	}*/
 
 	public static void main(String[] args) {
-		FilterProcessor.setProcessor(new DidiFilterProcessor());
+//		FilterProcessor.setProcessor(new DidiFilterProcessor());
 		new SpringApplicationBuilder(ZuulApplication.class).web(true).run(args);
 	}
 

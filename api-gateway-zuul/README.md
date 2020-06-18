@@ -73,3 +73,11 @@ try{
 后者是继承核心处理类将异常实例存储，被前者来读取。
 并且要在启动类中加入FilterProcessor.setProcessor(new DidiFilterProcessor());
 配合ThrowExceptionFilter类中设置post来测试。
+10.如果不采用重写过滤器的方式，依然想要使用SendErrorFilter来处理异常返回的话，如果定制返回的响应结果呢？
+通过getErrorAttributes方法来定义，参考类ErrorMvcAutoConfiguration、DidiErrorAttributes，
+以及启动类加入：
+@Bean
+public DefaultErrorAttributes errorAttributes(){
+    return new DidiErrorAttributes();
+}
+	
