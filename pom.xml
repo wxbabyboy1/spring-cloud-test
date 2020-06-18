@@ -18,6 +18,7 @@
         <module>config-server</module>
         <module>config-client</module>
         <module>rabbitmq-hello</module>
+        <module>stream-hello</module>
     </modules>
 
 	<groupId>com.zhagl</groupId>
