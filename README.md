@@ -49,4 +49,4 @@ forward本地跳转
 2）config-client客户端，调用config-server服务端读取远处git仓库的配置文件
 
 9.消息总线rabbitmq-hello
-1）简单的快速发送、接收消息例子
+1）springboot和rabbitmq整合：简单的快速发送、接收消息例子
