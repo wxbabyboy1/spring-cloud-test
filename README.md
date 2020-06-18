@@ -50,3 +50,4 @@ forward本地跳转
 
 9.消息总线rabbitmq-hello
 1）springboot和rabbitmq整合：简单的快速发送、接收消息例子
+2）手动刷新config远程仓库配置
