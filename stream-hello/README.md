@@ -60,3 +60,4 @@ App2是App1中input通道的生产者和output通道的消费者。
 此时控制台看到：
 Received:Tue Jun 30 17:30:29 CST 2020
 Received:From Input Channel Return -- Tue Jun 30 17:30:29 CST 2020
+当然，也可以用注解ServiceActivator的outputChannel替换注解StreamListener和注解SendTo
