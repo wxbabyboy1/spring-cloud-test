@@ -1,6 +1,6 @@
 package com.zhagl.test.receiver;
 
-import com.zhagl.test.User;
+import com.zhagl.test.modal.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.stream.annotation.EnableBinding;
@@ -20,6 +20,12 @@ public class SinkSender2{
 //    @InboundChannelAdapter(value = SinkOutput.OUTPUT, poller = @Poller(fixedDelay = "2000"))
 //    public MessageSource<Date> timeMessageSource(){
 //        return () -> new GenericMessage<>(new Date());
+//    }
+
+//    @Bean
+//    @InboundChannelAdapter(value = SinkOutput.OUTPUT, poller = @Poller(fixedDelay = "2000"))
+//    public MessageSource<String> timeMessageSource(){
+////        return () -> new GenericMessage<>("{\"name\":\"didi\", \"age\":30}");
 //    }
 
     @Bean
