@@ -45,5 +45,8 @@ Received:Tue Jun 30 11:31:26 CST 2020
 按理来说应该有Received:Tue Jun 30 11:31:26 CST 2020这样的很多个，但我实验就一个出来。
 替换注解StreamListener为ServiceActivator，增加注解Transformer方法，此时转换接收格式为时间格式化。
 
-
-
+消息转换
+注解StreamListener和注解ServiceActivator都实现了对输入消息通道的监听，但注解StreamListener相比注解ServiceActivator更强大，
+注解StreamListener内置了一系列的消息转换功能。
+（我实验没有成功。。）注解ServiceActivator需要transform注解转换，但注解StreamListener自动转换了，默认在接收和发送消息时对应的消息格式类型都是JSON格式。
+修改SinkSender2类，改成传送对象User。
