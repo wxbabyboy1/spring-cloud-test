@@ -49,4 +49,14 @@ Received:Tue Jun 30 11:31:26 CST 2020
 注解StreamListener和注解ServiceActivator都实现了对输入消息通道的监听，但注解StreamListener相比注解ServiceActivator更强大，
 注解StreamListener内置了一系列的消息转换功能。
 （我实验没有成功。。）注解ServiceActivator需要transform注解转换，但注解StreamListener自动转换了，默认在接收和发送消息时对应的消息格式类型都是JSON格式。
-修改SinkSender2类，改成传送对象User。
+4.修改SinkSender2类，改成传送对象User。
+
+消息反馈
+有时候在处理完输入消息之后，需要反馈一个消息给对方，可以通过@SendTo注解指定返回内容的输出通道。
+5.建立两个module，stream-hello-app1和stream-hello-app2，引入相关依赖，分别建立类App1和App2以及相关启动类。
+App1对input输入通道监听，接收消息后，加工后通过@SendTo发给output通道。
+App2是App1中input通道的生产者和output通道的消费者。
+同时运行App1的启动类和App2的启动类，启动App2的test方法。
+此时控制台看到：
+Received:Tue Jun 30 17:30:29 CST 2020
+Received:From Input Channel Return -- Tue Jun 30 17:30:29 CST 2020
