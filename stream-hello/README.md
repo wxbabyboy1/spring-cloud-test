@@ -61,3 +61,10 @@ App2是App1中input通道的生产者和output通道的消费者。
 Received:Tue Jun 30 17:30:29 CST 2020
 Received:From Input Channel Return -- Tue Jun 30 17:30:29 CST 2020
 当然，也可以用注解ServiceActivator的outputChannel替换注解StreamListener和注解SendTo
+
+5.1。spring cloud stream支持基于RxJava的响应式编程来处理消息的输入和输出。
+在stream-hello-app1中加入依赖spring-cloud-stream-rxjava
+写App1_1类替换App1（测试的时候注释掉）
+同时运行App1的启动类和App2的启动类，启动App2的test方法。
+此时同样的一样结果。（我没试出来。。）
+
